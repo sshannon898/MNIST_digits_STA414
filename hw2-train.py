@@ -141,7 +141,6 @@ def log_softmax(images, weights, w0=None):
     if w0 is None:
         w0 = np.zeros(weights.shape[1])
     softmax = np.dot(images, weights) + w0
-
     return (softmax.T - logsumexp(softmax, axis=1)).T
 
 
